@@ -52,7 +52,7 @@ static const char rcsid[] =
 
 /*
  * If the FAT > this size then skip comparing, lest we risk
- * OOMing the framework. in the future we need to just re-write
+ * OOMing the framework. In the future we need to just re-write
  * this whole thing and optimize for less memory
  */
 #define FAT_COMPARE_MAX_KB 4096
@@ -98,7 +98,7 @@ checkfilesys(const char *fname)
         fsck_info("FAT32 Filesystem\n");
         break;
     case CLUST16_MASK:
-        fsck_info("FAT16 Fielsystem\n");
+        fsck_info("FAT16 Filesystem\n");
         break;
     default:
         fsck_info("FAT12 Filesystem\n");
@@ -148,7 +148,7 @@ checkfilesys(const char *fname)
                 goto out;
             }
         }
-    fsck_info("** Phase 2 - Check Cluster Chains \n");
+    fsck_info("** Phase 2 - Checking Cluster Chains \n");
     mod |= checkfat(dosfs, &boot, boot.ValidFat >= 0 ? boot.ValidFat : 0, fat);
     if (mod & FSFATAL) {
         fsck_info("Fatal error during  checkfat()\n");
